@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
-    pulso: Number,
-    aceleracion: Number,
-    fecha: { type: Date, default: Date.now }
+    frecuencia_cardiaca: Number,
+    nivel_luz: Number,
+    estado: String,
+    timestamp: Number
 });
 
 module.exports = mongoose.model('Event', eventSchema);

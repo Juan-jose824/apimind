@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.error('❌ Error conectando a MongoDB:', err));
 
 // Ruta para guardar evento
-app.post('/eventos', async (req, res) => {
+app.post('/events', async (req, res) => {
     try {
         const nuevoEvento = new Event(req.body);
         await nuevoEvento.save();
@@ -32,7 +32,7 @@ app.post('/eventos', async (req, res) => {
 });
 
 // Ruta para obtener todos los eventos
-app.get('/eventos', async (req, res) => {
+app.get('/events', async (req, res) => {
     try {
         const eventos = await Event.find().sort({ fecha: -1 });
         res.json(eventos);
